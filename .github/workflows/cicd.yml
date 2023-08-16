@@ -28,16 +28,8 @@ jobs:
       runs-on: self-hosted
 
       steps:
-      - name: Build Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: war file
-          path: /home/ubuntu/actions-runner/_work/employee_registration/employee_registration/target/employee_registration-2.2-SNAPSHOT.war      
-      - name: Download Artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: war file
-          path: sudo /opt/tomcat/webapps
+      - name: war file
+        run: sudo cp /home/aishwarya/actions-runner/_work/employee_registration/employee_registration/target/employee_registration-2.2-SNAPSHOT.war /opt/tomcat/webapps
 
 
 
